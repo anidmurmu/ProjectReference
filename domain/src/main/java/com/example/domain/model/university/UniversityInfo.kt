@@ -1,4 +1,4 @@
-package com.example.projectreference.domain.model
+package com.example.domain.model.university
 
 data class UniversityInfo(
     val country: String,
