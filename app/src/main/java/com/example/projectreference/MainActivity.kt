@@ -11,7 +11,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.fragment.app.viewModels
 import com.example.projectreference.ui.theme.ProjectReferenceTheme
 import com.example.projectreference.university.UniversityViewModel
 import dagger.hilt.android.AndroidEntryPoint
