@@ -22,14 +22,14 @@ class UniversityViewModel @Inject constructor(
 
     fun getUniversityList() {
         viewModelScope.launch(dispatcherProvider.io) {
-            val response = getUniversityDetailsListUseCase.getUniversityDetailsList("India")
+            /*val response = getUniversityDetailsListUseCase.getUniversityDetailsList("India")
             response
                 .onSuccess {
                     _uiState.value = _uiState.value.copy(state =UniversityUiState.State.Success(it))
                 }
                 .onFailure {
                     _uiState.value = _uiState.value.copy(state =UniversityUiState.State.Error(it.toString()))
-                }
+                }*/
         }
     }
 }
