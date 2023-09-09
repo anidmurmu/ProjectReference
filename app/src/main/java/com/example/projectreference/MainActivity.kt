@@ -11,7 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.domain.model.university.UniversityInfo
 import com.example.projectreference.ui.theme.ProjectReferenceTheme
+import com.example.projectreference.university.DisplayUniversityUi
+import com.example.projectreference.university.UniversityListItem
 import com.example.projectreference.university.UniversityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,7 +33,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    //Greeting("Android")
+                    DisplayUniversityUi(viewModel = viewModel)
                 }
             }
         }
@@ -49,6 +53,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     ProjectReferenceTheme {
-        Greeting("Android")
+        //Greeting("Android")
+        UniversityListItem(universityInfo = UniversityInfo(country = "India", "In",
+            "BIT, Mesra","JH", emptyList(), emptyList()))
+
     }
 }
