@@ -6,6 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface UniversityApiClient {
-    @GET("search/")
+    @GET("search")
     suspend fun getUniversityDetailsList(@Query("country")country: String): List<UniversityNetworkInfo>
 }

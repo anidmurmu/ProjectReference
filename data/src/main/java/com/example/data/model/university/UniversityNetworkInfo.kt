@@ -6,15 +6,15 @@ data class UniversityNetworkInfo(
     @SerializedName("country")
     val country: String,
     @SerializedName("alpha_two_code")
-    val alphaTwoCode: String,
+    val alphaTwoCode: String?,
     @SerializedName("name")
     val universityName: String,
     @SerializedName("state-province")
-    val stateProvince: String,
+    val stateProvince: String?,
     @SerializedName("domains")
-    val domains: List<String>,
+    val domains: List<String>?,
     @SerializedName("web_pages")
-    val webPages: List<String>
+    val webPages: List<String>?
 )
 
 

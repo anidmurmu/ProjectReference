@@ -1,5 +1,6 @@
 package com.example.projectreference.university
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.usecase.university.GetUniversityDetailsListUseCase
@@ -22,14 +23,16 @@ class UniversityViewModel @Inject constructor(
 
     fun getUniversityList() {
         viewModelScope.launch(dispatcherProvider.io) {
-            /*val response = getUniversityDetailsListUseCase.getUniversityDetailsList("India")
+            val response = getUniversityDetailsListUseCase.getUniversityDetailsList("India")
             response
                 .onSuccess {
                     _uiState.value = _uiState.value.copy(state =UniversityUiState.State.Success(it))
+                    Log.d("apple", it.toString())
                 }
                 .onFailure {
                     _uiState.value = _uiState.value.copy(state =UniversityUiState.State.Error(it.toString()))
-                }*/
+                    Log.d("apple", it.toString())
+                }
         }
     }
 }

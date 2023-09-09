@@ -20,11 +20,11 @@ class UniversityMapper @Inject constructor() : Mapper<List<UniversityNetworkInfo
         return src.map {
             UniversityInfo(
                 it.country,
-                it.alphaTwoCode,
+                it.alphaTwoCode ?: "",
                 it.universityName,
-                it.stateProvince,
-                it.domains,
-                it.webPages
+                it.stateProvince ?: "",
+                it.domains ?: emptyList(),
+                it.webPages ?: emptyList()
             )
         }
     }

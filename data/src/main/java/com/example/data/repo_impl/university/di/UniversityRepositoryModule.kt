@@ -17,9 +17,9 @@ class UniversityRepositoryModule {
         @Provides
         @ActivityRetainedScoped
         fun provideUniversityRepository(
-            /*universityApiClient: UniversityApiClient,
-            universityMapper: UniversityMapper*/
+            universityApiClient: UniversityApiClient,
+            universityMapper: UniversityMapper
         ): UniversityRepository {
-            return UniversityRepoImpl(/*universityApiClient, universityMapper*/)
+            return UniversityRepoImpl(universityApiClient, universityMapper)
         }
 }
