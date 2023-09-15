@@ -20,7 +20,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.domain.model.university.UniversityInfo
@@ -65,11 +68,25 @@ fun UniversityListItem(universityInfo: UniversityInfo) {
                 Column(modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentHeight()) {
-                    Text(text = universityInfo.universityName, modifier = Modifier
+                    Text(text = universityInfo.universityName,
+                        color = Color.Black,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontStyle = FontStyle.Normal,
+                        modifier = Modifier
                         .padding(start = 8.dp,top = 8.dp, end = 8.dp))
-                    Text(text = universityInfo.country, modifier = Modifier
+                    Text(text = universityInfo.country,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.W500,
+                        fontStyle = FontStyle.Normal,
+                        modifier = Modifier
                         .padding(start = 8.dp, bottom = 8.dp, end = 8.dp))
                     /*GlideImage(model = "https://www.gravatar.com/avatar/8af4e652604bf9f952fded9930f74a37",
+                        contentDescription = "this is dummy text",
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .size(40.dp))*/
+                    /*GlideImage(model = "https://image.tmdb.org/t/p/w500/8pjWz2lt29KyVGoq1mXYu6Br7dE.jpg",
                         contentDescription = "this is dummy text",
                         modifier = Modifier
                             .fillMaxSize()
