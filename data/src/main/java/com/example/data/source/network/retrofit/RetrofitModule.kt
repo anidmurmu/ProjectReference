@@ -33,8 +33,11 @@ object RetrofitModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient()
+            .newBuilder()
+            .addInterceptor(httpLoggingInterceptor)
+            .build()
     }
 
     @Provides
