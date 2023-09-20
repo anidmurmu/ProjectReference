@@ -73,6 +73,8 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.44.2")
     kapt("com.google.dagger:hilt-compiler:2.44.2")
     implementation("com.github.bumptech.glide:compose:1.0.0-alpha.5")
+    implementation("io.arrow-kt:arrow-core:1.2.0")
+    implementation("io.arrow-kt:arrow-fx-coroutines:1.2.0")
 
 
     testImplementation("junit:junit:4.13.2")
