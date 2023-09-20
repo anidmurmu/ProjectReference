@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ProjectReference"
-include ':app'
-include ':domain'
-include ':data'
+include(":app")
+include(":domain")
+include(":data")
