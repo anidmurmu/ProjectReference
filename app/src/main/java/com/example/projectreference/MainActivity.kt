@@ -1,6 +1,10 @@
 package com.example.projectreference
 
+import android.bluetooth.BluetoothDevice
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -26,6 +30,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.getUniversityList()
+        val intent: Intent
         setContent {
             ProjectReferenceTheme {
                 // A surface container using the 'background' color from the theme
@@ -54,8 +59,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() {
     ProjectReferenceTheme {
         //Greeting("Android")
-        UniversityListItem(universityInfo = UniversityInfo(country = "India", "In",
-            "BIT, Mesra","JH", emptyList(), emptyList()))
+        /*UniversityListItem(universityInfo = UniversityInfo(country = "India", "In",
+            "BIT, Mesra","JH", emptyList(), emptyList()))*/
 
     }
 }

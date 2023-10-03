@@ -24,8 +24,13 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import arrow.core.Option
+import arrow.core.getOrElse
+import arrow.core.left
+import arrow.core.some
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.example.domain.model.university.Country
 import com.example.domain.model.university.UniversityInfo
 
 @Composable
@@ -75,12 +80,14 @@ fun UniversityListItem(universityInfo: UniversityInfo) {
                         fontStyle = FontStyle.Normal,
                         modifier = Modifier
                         .padding(start = 8.dp,top = 8.dp, end = 8.dp))
-                    Text(text = universityInfo.country,
+                    val country = universityInfo.country
+                    CountryName(country = universityInfo.country)
+                    /*Text(text = universityInfo.country.getOrElse { "" },
                         fontSize = 14.sp,
                         fontWeight = FontWeight.W500,
                         fontStyle = FontStyle.Normal,
                         modifier = Modifier
-                        .padding(start = 8.dp, bottom = 8.dp, end = 8.dp))
+                        .padding(start = 8.dp, bottom = 8.dp, end = 8.dp))*/
                     /*GlideImage(model = "https://www.gravatar.com/avatar/8af4e652604bf9f952fded9930f74a37",
                         contentDescription = "this is dummy text",
                         modifier = Modifier
@@ -94,4 +101,18 @@ fun UniversityListItem(universityInfo: UniversityInfo) {
                 }
             }
         }
+}
+
+@Composable
+fun CountryName(country: Option<Country>) {
+    country.map {
+        //Text(text = country.country.getOrElse { "" },
+        val abc: String = it.countryName
+        Text(text = abc,
+            fontSize = 14.sp,
+            fontWeight = FontWeight.W500,
+            fontStyle = FontStyle.Normal,
+            modifier = Modifier
+                .padding(start = 8.dp, bottom = 8.dp, end = 8.dp))
+    }
 }
